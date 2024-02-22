@@ -4,6 +4,9 @@ let newGameBtn = document.querySelector("#new-btn");
 let msgContainer = document.querySelector(".msg-container");
 let msg = document.querySelector("#msg");
 let turntext = document.querySelector(".turntext");
+let draw = document.querySelector(".draw-container")
+let drawBtn = document.querySelector("#draw-btn")
+
 
 let turn0 = true;
 
@@ -44,6 +47,7 @@ const resetGame = () => {
   turn0 = true;
   anableBoxes();
   msgContainer.classList.add("hide");
+  draw.classList.add("hiden")
 };
 
 const disableBoxes = () => {
@@ -74,6 +78,11 @@ const checkWinner = () => {
         shoWinner(pos1val);
         disableBoxes();
       }
+      
+      // if (pos1val !== pos2val && pos2val !== pos3val){
+      //   draw.classList.remove("hiden")
+      //   drawBtn.addEventListener("click",resetGame)
+      // }
     }
   }
 };
